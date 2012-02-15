@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Getting Started with deck.js</title>
+	
+	<meta name="description" content="A jQuery library for modern HTML presentations">
+	<meta name="author" content="Caleb Troughton">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+	
+	<!-- Core and extension CSS files -->
+	<link rel="stylesheet" href="../core/deck.core.css">
+	<link rel="stylesheet" href="../extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="../extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="../extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="../extensions/status/deck.status.css">
+	<link rel="stylesheet" href="../extensions/hash/deck.hash.css">
+	
+	<!-- Style theme. More available in /themes/style/ or create your own. -->
+	<link rel="stylesheet" href="../themes/style/web-2.0.css">
+	
+	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
+	<link rel="stylesheet" href="../themes/transition/horizontal-slide.css">
+	
+	<script src="../modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container">
+
+<!-- Begin slides -->
+
+
+
+<section class="slide" id="title-slide">
+	<h1>Every Node Dev Should Know...</h1>
+</section>
+
+<section class="slide" id="aboutme">
+    <h2>About Me</h2>
+    <h3>+Geoff Flarity</h3>
+    <h3>@gflarity</h3>
+    <h3><a href="http://github.com/gflarity">github.com/gflarity</a></h3>
+    <h3><a href="http://onlinevillage.blogspot.com">onlinevillage.blogspot.com</a></h3>
+    <h3>Systems Architect @ <a href="http://well.ca">Well.ca</a></h3>
+    <img src='well.png' style='float:left'>
+    <img src="http://placekitten.com/600/375" alt="Kitties" class="slide">
+</section>
+
+
+
+<!-- Begin slides -->
+<section class="slide" id="agenda">
+       <h2>Agenda</h2>
+        <ol>
+        <li>
+            <h3>Orders Of Magnitude</h3>
+        </li>
+        <li>
+            <h3>V8 Is How Fast!?</h3>
+        </li>
+         <li>
+            <h3>Why V8 Is Fast</h3>
+        </li>
+        <li>
+            <h3>Want To Block?</h3>
+        </li>
+        <li>
+            <h3>NPM</h3>
+        </li>
+        <li>
+            <h3>Function Scoped Variables</h3>
+        </li>
+        <li>
+            <h3>Writes Can Be Deceiving</h3>
+        </li>
+        <li>
+            <h3>Callback Hell</h3>
+        </li>
+
+         <li>
+            <h3>Debuggers</h3>
+        </li>
+        
+        <li>
+            <h3>SmartOS/Illumos</h3>
+        </li>
+        <li>
+            <h3>Cloud9 IDE</h3>
+        </li>
+        <li>
+            <h3>Resources</h3>
+        </li>
+    </ol>
+</section>
+
+<section class="slide" id="latency">
+	<h2>Orders Of Magnitude</h2>
+	<ul>
+		<li>
+			<h3>L1 Cache - 3 Cycles ( 1 ns )</h3>
+			<p></p>
+		</li>
+		<li>
+			<h3>L2 Cache - 14 Cycles (5 ns)</h3>
+			<p></p>
+		</li>
+		<li>
+			<h3>RAM - 250 Cycles (90 ns)</h3>
+			<p></p>
+		</li>
+        <li>
+    		<h3>SSD - 270 000 Cycles (90 usec)</h3>
+			<p></p>
+		</li>
+        <li>
+    		<h3>GigE Lan - 600 000 Cycles (200 usec)</h3>
+			<p></p>
+		</li>        
+        <li>
+    		<h3>Spinning Rust - 6 000 000 (2 msec)</h3>
+			<p></p>
+		</li>
+        <li>
+    		<h3>Internet - 300 000 000 (100ms)</h3>
+			<p></p>
+		</li>
+	</ul>
+</section>
+
+<section class="slide" id="v8_fast">
+	<h2>V8 Is How Fast!?</h2>
+    <img src="v8_fast.png">
+    <a href="http://onlinevillage.blogspot.com/2011/03/is-javascript-is-faster-than-c.html" style="text-align:center">
+        Is JavaScript Faster Than C?
+    </a>
+</section>
+
+
+<section class="slide" id="v8_why">
+    <h2>Why V8 Is Fast</h2>
+        <ul>
+        <li>
+    		<h3>Google, Apple, Mozilla, Microsoft</h3>
+            <p>In competition and throwing money at making JavaScript fast.</p>
+		</li>
+          <li>
+        	<h3>V8 Compiles JavaScript</h3>
+            <p>Lots of runtime optmization (JIT).</p>
+		</li>
+        <li>
+			<h3>Lars Bak</h3>
+            <p>SmallTalk VM, JVM, and now V8</p>
+		</li>
+         <li>
+    		<h3>Limits</h3>
+            <p>JavaScript's nature might make further optimization difficult. Dart?</p>
+		</li>
+        </ul>
+</section>
+
+
+<section class="slide" id="block">
+   <h2>Want To Block?</h2>
+        <ul>
+        <li>
+            <h3>Node Is Not A Hammer</h3>
+            <p>Node purposefully makes blocking patterns difficult. Get over it.</p>
+		</li>
+        <li>
+    		<h3>Use Ruby, Python, Perl...</h3>
+            <p>These hammers are things are still great.</p>
+		</li>
+          <li>
+        	<h3>Use Helper Modules</h3>
+            <p>There are lots of tools for working with asynchronous JavaScript</p>
+		</li>
+        </ul>
+
+</section>
+
+<section class="slide" id="npm">
+	<h2>NPM</h2>
+     <ul>
+       <li>
+            <h3>Why Revent The Wheel?</h3>
+            <p>Reduce, Recyle, Reuse.</p>
+		</li>
+        <li>
+            <h3>Makes Publishing Modules Easy</h3>
+            <p>Over 7000 an counting.</p>            
+    	</li>
+        <li>
+    		<h3>Your Mileage May Vary</h3>
+            <p>They're still working on better tools for identifying quality modules.</p>
+		</li>
+        
+        </ul>
+</section>
+
+<section class="slide" id="function_scoped_variables">
+	<h2>Function Scoped Variables</h2>
+    <h3>In JavaScript 'var' Variables Are Function Scoped</h3>
+    <pre><code>
+    //lets print a whole bunch of 5s!
+    var myArray =[ 1, 2, 3, 4, 5 ];
+    for( var i = 0; i < myArray.length; i++ ) {
+        var value = myArray[i]];
+        fs.write( fd, myArray[i] )
+    }            
+    </code></pre>      
+    <pre><code>
+    //let's print 12345
+    var myArray =[ 1, 2, 3, 4, 5 ];
+    var write_element = function( i ) {
+        var value = myArray[i]];
+        fs.write( fd, myArray[i] )
+    };
+     for( var i = 0; i < myArray.length; i++ ) {
+        write_element( i )
+     }
+    </pre></code>
+</section>
+
+<section class="slide" id="writes">
+	<h2>Writes Can Be Deceiving</h2>
+    Just because the call back is called, doesn't mean it's made it to disk.
+    <pre><code>
+    var on_write = function( err ) {
+        if ( ! err ) { console.log('all clear!') };
+        //insert power failure here
+    };
+    fs.write(fd, buffer, offset, length, position, [callback])
+    </pre></code>
+    <pre><code>
+    
+    var on_write = function( err ) {
+
+        var on_fsync = function ( err ) {    
+            if ( ! err ) { 
+                console.log('according to the OS, I'm all clear!') 
+            };
+        };  
+        fs.fsync( fd, on_fsync ) 
+        
+        //insert power failure here
+    
+    };
+    fs.write(fd, buffer, offset, length, position, on_write )
+    </pre></code>
+</section>
+
+<section class="slide" id="callback_hell">
+	<h2>Callback Hell</h2>	
+    <p>Callback hell can be mitigated.</p>
+    <pre><code>
+    //look mom, fewer lines!
+    fs.write(fd, buffer, offset, length, position, function( err ) {        
+        if ( ! err ) { 
+            fs.fsync( fd, function( err ) {        
+                if ( ! err ) { 
+                    console.log('according to the OS, I'm all clear!') 
+                }
+            });
+        }  
+        //insert power failure here
+    });  
+    </pre></code>
+    <pre><code>
+    var on_write = function( err ) {
+        if ( ! err ) {
+            var on_fsync = function ( err ) {    
+                if ( ! err ) { 
+                    console.log('according to the OS, I'm all clear!') 
+                };
+            };  
+            fs.fsync( fd, on_fsync ) 
+        }
+        //insert power failure here
+    };
+    fs.write(fd, buffer, offset, length, position, on_write );
+    </pre></code>
+</section>
+
+<section class="slide" id="debuggers">
+	<h2>Debuggers</h2>
+	<h3>Use One.</h3>
+     <ul>
+        <li>
+            <h3>node debug my.js</h3>
+            <p>Easiest to use and get started with.</p>            
+        </li>
+        <li>
+            <h3>Eclipse</h3>
+            <p>The best debugger Node.js debugger available.</p>
+    	</li>
+        <li>
+    		<h3>Cloud9 IDE Debugger</h3>
+            <p>Pretty good and it's part of an IDE.</p>
+		</li>
+    </ul>
+</section>
+
+<section class="slide" id="illumos">
+    <h2>SmartOS/Illumos</h2>
+
+    <h3>Solaris lives and Joyent is making the premier Node.js platform.</h3>
+     <ul>
+        <li>
+            <h3>DTrace</h3>
+            <p>Dynamically trace/profile node HTTP/Socket requests with low overhead.</p>            
+        </li>
+        <li>
+            <h3>Post Mortem Debugging</h3>
+            <p>When an exception doesn't get caught, drop a core and restart.</p>
+    	</li>
+        <li>
+    		<h3>More to come?</h3>
+            <p>Solaris kernel engineers seem to dig it.</p>
+		</li>
+    </ul>
+</section>
+
+
+<section class="slide" id="cloud9">
+    <h2>Cloud9 IDE</h2>
+
+    <h3>The first IDE written completely in JavaScript using Node</h3>
+    <p><p>
+    <h3>&lt;Insert Demo Here&gt;</h3>
+    </ul>
+</section>
+
+<section class="slide" id="resources">
+    <h2>Rescources</h2>
+
+        <ul>
+        <li>
+            <h3>Mailing list, irc, online docs...</h3>
+            <p>Yadda, yadda</p>
+    	</li>
+        <li>
+    		<h3><a href="http://nodeup.com/">NodeUp</a></h3>
+            <p>Great podcast often featuring core contributers and module makers.</p>
+		</li>
+          <li>
+        	<h3><a href="http://planetnodejs.com/">Planet Node.js</a></h3>
+            <p>Node blog aggregator.</p>
+		</li>
+        </ul>
+</section>
+
+<section class="slide" id="end">
+    <h2>The End</h2>
+
+       <h1>Thanks!</h1>
+</section>
+
+
+<!-- deck.navigation snippet -->
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<!-- deck.status snippet -->
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<!-- deck.goto snippet -->
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+	<datalist id="goto-datalist"></datalist>
+	<input type="submit" value="Go">
+</form>
+
+<!-- deck.hash snippet -->
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+
+<!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="../jquery-1.7.min.js"><\/script>')</script>
+
+<!-- Deck Core and extensions -->
+<script src="../core/deck.core.js"></script>
+<script src="../extensions/hash/deck.hash.js"></script>
+<script src="../extensions/menu/deck.menu.js"></script>
+<script src="../extensions/goto/deck.goto.js"></script>
+<script src="../extensions/status/deck.status.js"></script>
+<script src="../extensions/navigation/deck.navigation.js"></script>
+
+<!-- Initialize the deck -->
+<script>
+$(function() {
+	$.deck('.slide');
+});
+</script>
+
+</body>
+</html>
