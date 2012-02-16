@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>Getting Started with deck.js</title>
+	<title>Every Node Dev Should Know..,</title>
 	
 	<meta name="description" content="A jQuery library for modern HTML presentations">
 	<meta name="author" content="Caleb Troughton">
@@ -65,6 +65,9 @@
         </li>
          <li>
             <h3>Why V8 Is Fast</h3>
+        </li>
+         <li>
+            <h3>Don't Block The Event Loop</h3>
         </li>
         <li>
             <h3>Want To Block?</h3>
@@ -163,17 +166,41 @@
         </ul>
 </section>
 
+<section class="slide" id="eventloop">
+    <h2>Don't Block The Event Loop</h2>
+        <ul>
+        <li>
+        	<h3>Node Is Single Threaded By Design</h3>
+            <p>Pay no attention to the man (IO threads) behind the curtain.</p>
+		</li>
+          <li>
+        	<h3>One Big Loop</h3>
+            <p>As long as there are events to deal with, it keeps looping, forever.</p>
+		</li>
+        <li>
+			<h3>Don't Block This Loop</h3>
+            <p>Bad things happens. As in nothing else!</p>
+            
+		</li>
+        </ul>
+</section>
+
 
 <section class="slide" id="block">
-   <h2>Want To Block?</h2>
+   <h2>No Really, Don't Try To Block</h2>
         <ul>
+        <li>
+            <h3>But My Fibonacci Sequence Server Is Imporant</h3>
+            <p> Sorry! If you want to use Node for it, you'll need to be more creative.</p>
+    	</li>
         <li>
             <h3>Node Is Not A Hammer</h3>
             <p>Node purposefully makes blocking patterns difficult. Get over it.</p>
 		</li>
+ 
         <li>
-    		<h3>Use Ruby, Python, Perl...</h3>
-            <p>These hammers are things are still great.</p>
+    		<h3>Ruby, Python, Perl</h3>
+            <p>These hammers are still great.</p>
 		</li>
           <li>
         	<h3>Use Helper Modules</h3>
@@ -228,7 +255,7 @@
 
 <section class="slide" id="writes">
 	<h2>Writes Can Be Deceiving</h2>
-    Just because the call back is called, doesn't mean it's made it to disk.
+    <h3>Just because the call back is called, doesn't mean it's made it to disk.</h3>
     <pre><code>
     var on_write = function( err ) {
         if ( ! err ) { console.log('all clear!') };
@@ -255,8 +282,8 @@
 </section>
 
 <section class="slide" id="callback_hell">
-	<h2>Callback Hell</h2>	
-    <p>Callback hell can be mitigated.</p>
+	<h2>Callback Hell</h2>
+    <h3>Callback hell can be mitigated.</h3>
     <pre><code>
     //look mom, fewer lines!
     fs.write(fd, buffer, offset, length, position, function( err ) {        
